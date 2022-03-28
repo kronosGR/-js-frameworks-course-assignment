@@ -6,7 +6,6 @@ const CountryList = ({ countries }) => {
     <Container>
       <Row xs={12} sm={2} lg={4}>
         {countries.map((country) => {
-          console.log(country);
           return (
             <Country
               key={country.name.common}
