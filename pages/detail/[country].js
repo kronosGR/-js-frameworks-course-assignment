@@ -19,7 +19,7 @@ const Detail = ({ data }) => {
 
       <Heading title={data[0].name.official} />
       <h2>Capital: {data[0].capital}</h2>
-      <p>Continent: {data[0].subregion}</p>
+      <p>Region: {data[0].subregion}</p>
       <Image
         src={data[0].flags.png}
         alt={data[0].name.official}
