@@ -14,11 +14,11 @@ import { useRouter } from 'next/router';
 const url = process.env.NEXT_PUBLIC_WP_BASE_URL;
 
 const loginSchema = yup.object().shape({
-  username: yup.string().required('Please enter your username'),
+  identifier: yup.string().required('Please enter your username'),
   password: yup.string().required('Please enter your password'),
 });
 
-const loginPage = (props) => {
+const LoginPage = (props) => {
   const [submitting, setSubmitting] = useState(false);
   const [loginError, setLoginError] = useState(null);
   const router = useRouter();
@@ -68,14 +68,14 @@ const loginPage = (props) => {
               <Form.Control
                 type='text'
                 placeholder='Your username'
-                {...register('username')}
+                {...register('identifier')}
               />
               {errors.email && (
-                <span className='alert-danger'>{errors.username.message}</span>
+                <span className='alert-danger'>{errors.identifier.message}</span>
               )}
             </Form.Group>
             <Form.Group className='mt-4'>
-              <Form.Label>Passwprd</Form.Label>
+              <Form.Label>Password</Form.Label>
               <Form.Control
                 type='password'
                 placeholder='Your password'
@@ -95,4 +95,4 @@ const loginPage = (props) => {
   );
 };
 
-export default loginPage;
+export default LoginPage;
